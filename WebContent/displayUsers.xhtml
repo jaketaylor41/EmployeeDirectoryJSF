@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- value="#{recipeController.recipeService.recipes}" var = "o" -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="title">Employee Directory</ui:define>
+	<ui:define name="content">
+	<br />
+		<div align="center">
+			<h:dataTable value="#{employeeController.employeeService.employee}" var="o"
+				border="1" cellspacing="2" cellpadding="4" styleClass="order-table" headerClass="order-table-header"
+				rowClass="order-table-odd-row, order-table-even-row">
+				<h:column>
+					<f:facet name="header">First Name</f:facet>
+				#{o.firstName}
+			</h:column>
+				<h:column>
+					<f:facet name="header">Last Name</f:facet>
+				#{o.lastName}
+			</h:column>
+				<h:column>
+					<f:facet name="header">Email</f:facet>
+				#{o.email}
+			</h:column>
+				<h:column>
+					<f:facet name="header">Phone Number</f:facet>
+				#{o.phoneNumber}
+			</h:column>
+			</h:dataTable>
+			<br />
+			<br />
+			<h:button value="Go Home!" outcome="home.xhtml" />
+		</div>
+	</ui:define>
+</ui:composition>
+
+</html>

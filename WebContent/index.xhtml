@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/layouts/commonLayoutIndex.xhtml">
+	<ui:define name="title">Employee Directory</ui:define>
+	<ui:define name="content">
+		<div align="center">
+			<!-- Index page which will welcome the user and let them register or login -->
+			<h:form>
+				<br></br>
+				<h3>Welcome to the Employee Directory!</h3>
+				<h3>Choose to Login or Register!</h3>
+				<h:commandButton value="Register"
+					action="#{employeeController.onSubmitRegister()}" />
+				<h:commandButton value="Login"
+					action="#{employeeController.onSubmitLogin()}" />
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+<h:head>
+	<title>Employee Directory</title>
+</h:head>
+</html>
